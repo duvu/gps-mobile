@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ng_client/src/resources/authentication/authentication.dart';
 import 'package:ng_client/src/resources/authentication/authentication_bloc.dart';
+import 'package:ng_client/src/ui/maps/maps.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -35,15 +36,16 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
-        child: Center(
-            child: RaisedButton(
-          child: Text('logout'),
-          onPressed: () {
-            BlocProvider.of<AuthenticationBloc>(context).add(LoggedOut());
-          },
-        )),
-      ),
+      body: MapsPage()
+//      body: Container(
+//        child: Center(
+//            child: RaisedButton(
+//          child: Text('logout'),
+//          onPressed: () {
+//            BlocProvider.of<AuthenticationBloc>(context).add(LoggedOut());
+//          },
+//        )),
+//      ),
     );
   }
 }
